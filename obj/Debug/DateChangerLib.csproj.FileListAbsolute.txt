@@ -1,0 +1,12 @@
+C:\Users\mpreston\Desktop\PlayProjects\DateChanger\bin\Debug\DateChangerLib.dll
+C:\Users\mpreston\Desktop\PlayProjects\DateChanger\bin\Debug\DateChangerLib.pdb
+C:\Users\mpreston\Desktop\PlayProjects\DateChanger\obj\Debug\DateChangerLib.csprojResolveAssemblyReference.cache
+C:\Users\mpreston\Desktop\PlayProjects\DateChanger\obj\Debug\DateChangerLib.csproj.CoreCompileInputs.cache
+C:\Users\mpreston\Desktop\PlayProjects\DateChanger\obj\Debug\DateChangerLib.dll
+C:\Users\mpreston\Desktop\PlayProjects\DateChanger\obj\Debug\DateChangerLib.pdb
+C:\Users\mpreston\Desktop\TimeMachine\TimeMachine\bin\Debug\TimeMachine.dll
+C:\Users\mpreston\Desktop\TimeMachine\TimeMachine\bin\Debug\TimeMachine.pdb
+C:\Users\mpreston\Desktop\TimeMachine\TimeMachine\obj\Debug\DateChangerLib.csprojResolveAssemblyReference.cache
+C:\Users\mpreston\Desktop\TimeMachine\TimeMachine\obj\Debug\DateChangerLib.csproj.CoreCompileInputs.cache
+C:\Users\mpreston\Desktop\TimeMachine\TimeMachine\obj\Debug\TimeMachine.dll
+C:\Users\mpreston\Desktop\TimeMachine\TimeMachine\obj\Debug\TimeMachine.pdb
