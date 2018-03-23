@@ -4,42 +4,24 @@ using System.Runtime.InteropServices;
 
 namespace TimeMachine
 {
-    public static class DateChanger
+    public class TimeChanger
     {
-        [DllImport("coredll.dll")]
-        private extern static void GetSystemTime(ref SYSTEMTIME lpSystemTime);
-
-        [DllImport("coredll.dll")]
-        private extern static uint SetSystemTime(ref SYSTEMTIME lpSystemTime);
-
-        public static void GetTime()
+        public void GetTime()
         {
             // Call the native GetSystemTime method
             // with the defined structure.
-            var stime = new SYSTEMTIME();
-            GetSystemTime(ref stime);
+            var systemTime = new SYSTEMTIME();
+            GetSystemTime(ref systemTime);
 
             // Show the current time.           
             Debug.WriteLine("Current Time: " +
-                stime.wHour.ToString() + ":"
-                + stime.wMinute.ToString());
+                systemTime.wHour.ToString() + ":"
+                + systemTime.wMinute.ToString());
         }
 
-        private static void SetTime()
-        {
-            // Call the native GetSystemTime method
-            // with the defined structure.
-            var systime = new SYSTEMTIME();
-            GetSystemTime(ref systime);
+        public bool ChangeTime(DateTime time) => ChangeTime((short)time.Year, (short)time.Month, (short)time.Day, (short)time.Hour, (short)time.Minute, (short)time.Second);
 
-            // Set the system clock ahead one hour.
-            systime.wHour = (short)(systime.wHour + 1 % 24);
-            SetSystemTime(ref systime);
-            Debug.WriteLine("New time: " + systime.wHour.ToString() + ":"
-                + systime.wMinute.ToString());
-        }
-
-        public static bool ChangeDateTime(short year, short month, short day, short hour, short minute, short second)
+        public bool ChangeTime(short year, short month, short day, short hour, short minute, short second)
         {
             try
             {
@@ -64,6 +46,26 @@ namespace TimeMachine
             return true;
         }
 
+        [DllImport("coredll.dll")]
+        private extern static void GetSystemTime(ref SYSTEMTIME lpSystemTime);
+
+        [DllImport("coredll.dll")]
+        private extern static uint SetSystemTime(ref SYSTEMTIME lpSystemTime);
+
+        private static void SetTime()
+        {
+            // Call the native GetSystemTime method
+            // with the defined structure.
+            var systime = new SYSTEMTIME();
+            GetSystemTime(ref systime);
+
+            // Set the system clock ahead one hour.
+            systime.wHour = (short)(systime.wHour + 1 % 24);
+            SetSystemTime(ref systime);
+            Debug.WriteLine("New time: " + systime.wHour.ToString() + ":"
+                + systime.wMinute.ToString());
+        }
+
         [StructLayout(LayoutKind.Sequential)]
         private struct SYSTEMTIME
         {
@@ -79,5 +81,4 @@ namespace TimeMachine
             public short wMilliseconds;
         }
     }
-
 }

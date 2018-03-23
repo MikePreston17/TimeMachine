@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DesignPatterns">
+      <HintPath>..\..\DesignPatterns\DesignPatterns\bin\Release\DesignPatterns.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
@@ -43,10 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DateChanger.cs" />
-    <Compile Include="EnumBindingSourceExtension.cs" />
-    <Compile Include="EnumDescriptionTypeConverter.cs" />
+    <Compile Include="TimeChanger.cs" />
+    <Compile Include="Integration\EnumBindingSourceExtension.cs" />
+    <Compile Include="Integration\EnumDescriptionTypeConverter.cs" />
+    <Compile Include="IServiceController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TimeMachine.cs" />
     <Compile Include="TimeServiceManager.cs" />
     <Compile Include="TimeServiceManager.State.cs" />
   </ItemGroup>
