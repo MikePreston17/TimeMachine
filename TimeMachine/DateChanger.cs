@@ -16,7 +16,7 @@ namespace TimeMachine
         {
             // Call the native GetSystemTime method
             // with the defined structure.
-            SYSTEMTIME stime = new SYSTEMTIME();
+            var stime = new SYSTEMTIME();
             GetSystemTime(ref stime);
 
             // Show the current time.           
@@ -29,7 +29,7 @@ namespace TimeMachine
         {
             // Call the native GetSystemTime method
             // with the defined structure.
-            SYSTEMTIME systime = new SYSTEMTIME();
+            var systime = new SYSTEMTIME();
             GetSystemTime(ref systime);
 
             // Set the system clock ahead one hour.
@@ -43,7 +43,7 @@ namespace TimeMachine
         {
             try
             {
-                SYSTEMTIME systemTime = new SYSTEMTIME
+                var systemTime = new SYSTEMTIME
                 {
                     wYear = year,
                     wMonth = month,

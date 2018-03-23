@@ -1,4 +1,0 @@
-C:\Users\mpreston\Desktop\PlayProjects\DateChanger\bin\Debug\DateChanger.dll
-C:\Users\mpreston\Desktop\PlayProjects\DateChanger\bin\Debug\DateChanger.pdb
-C:\Users\mpreston\Desktop\PlayProjects\DateChanger\obj\Debug\DateChanger.dll
-C:\Users\mpreston\Desktop\PlayProjects\DateChanger\obj\Debug\DateChanger.pdb

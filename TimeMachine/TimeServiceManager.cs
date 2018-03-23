@@ -8,7 +8,7 @@ using System.ServiceProcess;
 namespace TimeMachine
 {
     //Adapted from: https://www.codeproject.com/Tips/703289/How-to-Control-a-Windows-Service-from-Code
-    public class TimeServiceManager
+    public partial class TimeServiceManager
     {
         private const string serviceName = "Windows Time";
         private const int timeoutMilliseconds = 3600;
@@ -24,7 +24,7 @@ namespace TimeMachine
             {
                 try
                 {
-                    var query = String.Format("SELECT * FROM Win32_Service WHERE Name = '{0}'", _serviceMonitor.ServiceName);
+                    string query = string.Format("SELECT * FROM Win32_Service WHERE Name = '{0}'", _serviceMonitor.ServiceName);
                     var querySearch = new ManagementObjectSearcher(query);
                     var services = querySearch.Get();
                     // Since we have set the servicename in the constructor we asume the first result is always
@@ -61,13 +61,7 @@ namespace TimeMachine
             return root.GetValue(valueName) != null;
         }
 
-        /// <summary>
-        /// * 0 = Boot
-        ///* 1 = System
-        ///* 2 = Automatic
-        ///* 3 = Manual
-        ///* 4 = Disabled
-        /// </summary>
+
         public static void Enable()
         {
             try
@@ -118,23 +112,6 @@ namespace TimeMachine
                 throw new Exception("Could not disable the service, error: " + e.Message);
             }
         }
-
-        private static string FindWinTimeKeyName()
-        {
-            string keyName = @"HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\";
-
-            using (var hkeyLocalMachine = RegistryKey.OpenBaseKey(RegistryHive.Users, RegistryView.Registry64))
-            using (var key = hkeyLocalMachine.OpenSubKey(keyName))
-            {
-                foreach (var name in key.GetSubKeyNames())
-                {
-                    Debug.WriteLine(name);
-                }
-            }
-
-            return keyName;
-        }
-
         public static void Start()
         {
             try
@@ -162,7 +139,6 @@ namespace TimeMachine
                 throw;
             }
         }
-
         public static void Stop()
         {
             try
@@ -178,7 +154,6 @@ namespace TimeMachine
                 throw;
             }
         }
-
         public static void Restart()
         {
             try
@@ -190,6 +165,22 @@ namespace TimeMachine
             {
                 throw;
             }
+        }
+
+        private static string FindWinTimeKeyName()
+        {
+            string keyName = @"HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\";
+
+            using (var hkeyLocalMachine = RegistryKey.OpenBaseKey(RegistryHive.Users, RegistryView.Registry64))
+            using (var key = hkeyLocalMachine.OpenSubKey(keyName))
+            {
+                foreach (string name in key.GetSubKeyNames())
+                {
+                    Debug.WriteLine(name);
+                }
+            }
+
+            return keyName;
         }
 
     }

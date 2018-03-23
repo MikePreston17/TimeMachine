@@ -1,6 +1,0 @@
-C:\Users\mpreston\Desktop\PlayProjects\DateChanger\bin\Release\DateChangerLib.dll
-C:\Users\mpreston\Desktop\PlayProjects\DateChanger\bin\Release\DateChangerLib.pdb
-C:\Users\mpreston\Desktop\PlayProjects\DateChanger\obj\Release\DateChangerLib.csprojResolveAssemblyReference.cache
-C:\Users\mpreston\Desktop\PlayProjects\DateChanger\obj\Release\DateChangerLib.csproj.CoreCompileInputs.cache
-C:\Users\mpreston\Desktop\PlayProjects\DateChanger\obj\Release\DateChangerLib.dll
-C:\Users\mpreston\Desktop\PlayProjects\DateChanger\obj\Release\DateChangerLib.pdb
