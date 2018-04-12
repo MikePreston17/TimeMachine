@@ -42,7 +42,6 @@ namespace TimeMachine
             {
                 throw;
             }
-
         }
 
         private bool isDisposed = false;
