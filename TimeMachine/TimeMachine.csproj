@@ -31,7 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DesignPatterns">
-      <HintPath>..\..\DesignPatterns\DesignPatterns\bin\Release\DesignPatterns.dll</HintPath>
+      <HintPath>bin\DesignPatterns.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
